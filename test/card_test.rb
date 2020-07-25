@@ -17,4 +17,9 @@ class CardTest < Minitest::Test
     card = Card.new("Ace", "Spades")
     assert_equal "Spades", card.suit
   end
+
+  def test_it_can_be_represented_as_a_string
+    card = Card.new("Ace", "Spades")
+    assert_equal "Ace of Spades", card.to_s
+  end
 end
