@@ -22,4 +22,13 @@ class CardTest < Minitest::Test
     card = Card.new("Ace", "Spades")
     assert_equal "Ace of Spades", card.to_s
   end
+
+  def test_it_is_ranked_by_value_then_suit
+    card1 = Card.new("2", "Clubs")
+    card2 = Card.new("3", "Clubs")
+    card3 = Card.new("3", "Diamonds")
+
+    assert card2 > card1
+    assert card3 > card2
+  end
 end
